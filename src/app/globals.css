@@ -2,7 +2,9 @@
 
 @theme inline {
   /* brand colors */
-  --color-primary-500: #003549; /* Dark Blue */
+  --color-primary-500: #003459; /* Dark Blue */
+  --color-primary-600: #002a48; /* Darker Blue */
+  --color-secondary-400: #fceed5; /*  Yellow */
   --color-secondary-500: #f7dba7; /* Mon Yellow */
 
   /* state colors */
