@@ -1,9 +1,9 @@
 import Image from "next/image";
 import AnimatedShapes from "@/components/hero/AnimatedShapes";
 import Button from "@/components/ui/Button";
-import HomePetSection from "@/components/category/HomePetSection";
+import Card from "@/components/category/Card";
 import { mockPets } from "@/data/mockPets";
-import ReusableCard from "@/components/hero/ReusableCard";
+import BannerPet from "@/components/bannerPet/BannerPet";
 
 export default function HomePage() {
   return (
@@ -45,9 +45,33 @@ export default function HomePage() {
         </div>
       </section>
 
-      <HomePetSection pets={mockPets} limit={8} />
+      <section className="py-12">
+        <div className="mx-auto max-w-7xl px-4">
+          <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
+            <h2 className="text-[var(--text-h3-28)] leading-[var(--leading-h3-36)] font-bold text-neutral-100">
+              Small Dog
+              <span className="ml-2 text-[var(--text-body-16)] text-neutral-60">
+                ({mockPets.slice(0, 8).length} dogs)
+              </span>
+            </h2>
+          </div>
 
-      <ReusableCard
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {mockPets.slice(0, 8).map((pet, index) => (
+              <Card
+                key={`${pet.name}-${pet.image}-${index}`}
+                img={pet.image}
+                title={pet.name}
+                subtitle={`Gender: ${pet.gene}`}
+                description={`Age: ${pet.age} months`}
+                price={Number(pet.price)}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <BannerPet
         title="One More Friend"
         subtitle="Thousands More Fun!"
         description="Having a pet means you have more joy, a new friend, a happy person who will always be with you to have fun. We have 200+ different pets that can meet your needs!"

@@ -1,4 +1,3 @@
-"use client";
 import Image from "next/image";
 import Button from "../ui/Button";
 
@@ -16,17 +15,15 @@ export default function ReusableCard({
   primaryBtnHref,
   secondaryBtnText,
   secondaryBtnHref,
-  className = "",
   onPrimaryClick,
-  onSecondaryClick,
   ...props
 }) {
   const isImageLeft = imagePosition === "left";
 
   return (
-    <section className="w-full">
+    <section className="w-full mt-5 ">
       <main
-        className={`max-w-7xl mx-auto flex flex-col lg:flex-row items-end border-0 rounded-3xl bg-primary-500 lg:h-[378px] overflow-hidden ${className}`}
+        className={`max-w-7xl  mx-auto flex flex-col lg:flex-row items-end border-0 rounded-3xl bg-primary-500 lg:h-[378px] overflow-hidden group `}
         {...props}
       >
         {/* Image Section */}
@@ -35,7 +32,7 @@ export default function ReusableCard({
             isImageLeft ? "lg:order-1" : "lg:order-2"
           }`}
         >
-          <div className="pointer-events-none absolute z-10 right-[55px] bottom-[-260px] h-[700px] w-[700px] -rotate-150 -translate-x-5 translate-y-55 rounded-[99px] bg-primary-600 "></div>
+          <span className="pointer-events-none absolute z-10 right-[55px] bottom-[-260px] h-[700px] w-[700px] -rotate-150 -translate-x-5 translate-y-55 rounded-[99px] bg-primary-600 duration-600 group-hover:-rotate-140"></span>
           <Image
             src={image}
             alt={imageAlt}
@@ -51,7 +48,7 @@ export default function ReusableCard({
             isImageLeft ? "lg:order-2" : "lg:order-1"
           }`}
         >
-          <span className="pointer-events-none absolute -top-30 -right-40  z-10  h-[635px] w-[782px] rounded-[99px] rotate-[35deg]   bg-secondary-400"></span>
+          <span className="pointer-events-none absolute -top-30 -right-40  z-10  h-[635px] w-[782px] rounded-[99px] rotate-[35deg] bg-secondary-400 duration-600 group-hover:rotate-[50deg]"></span>
 
           <div className="max-w-lg relative z-20 flex flex-col items-end ">
             <h2 className="text-5xl font-bold text-primary-600 mb-4">
@@ -75,9 +72,7 @@ export default function ReusableCard({
               {secondaryBtnText && (
                 <Button
                   variant="secondary"
-                  href={secondaryBtnHref}
-                  onClick={onSecondaryClick}
-                  className="w-full sm:w-auto"
+                  className="group-hover:bg-primary-600 group-hover:text-white"
                 >
                   {secondaryBtnText}
                 </Button>

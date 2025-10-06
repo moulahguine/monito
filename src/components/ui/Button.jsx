@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 export default function Button({
   href,
   children,
@@ -34,22 +36,14 @@ export default function Button({
 
   const buttonClasses = `${baseClasses} ${variants[variant]} ${sizes[size]} ${disabledClasses} ${className}`;
 
-  if (href) {
-    return (
-      <a href={href} className={buttonClasses} {...props}>
-        {children}
-      </a>
-    );
-  }
-
   return (
-    <button
+    <Link
+      href="/category"
       className={buttonClasses}
-      onClick={onClick}
       disabled={disabled}
       {...props}
     >
       {children}
-    </button>
+    </Link>
   );
 }

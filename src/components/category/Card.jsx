@@ -12,16 +12,16 @@ export default function Card({
 }) {
   return (
     <div
-      className="bg-white rounded-lg overflow-hidden shadow-lg  hover:shadow-sm transition-shadow p-2 group transition duration-300 ease-in-out cursor-pointer"
+      className="bg-white rounded-2xl overflow-hidden border border-primary-500/10  hover:shadow-sm transition-shadow p-2 group transition duration-300 ease-in-out cursor-pointer"
       onClick={onClick}
       {...props}
     >
-      <div className="aspect-square relative overflow-hidden  ">
+      <div className="aspect-square relative rounded-2xl overflow-hidden ">
         <Image
           src={img}
           alt={title}
           fill
-          className="object-cover group-hover:scale-120 group-hover:-rotate-6 transition duration-300 ease-in-out"
+          className="object-cover group-hover:scale-110 group-hover:-rotate-1 transition duration-300 ease-in-out"
         />
       </div>
 
