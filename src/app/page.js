@@ -1,7 +1,7 @@
 import Image from "next/image";
 import AnimatedShapes from "@/components/hero/AnimatedShapes";
 import Button from "@/components/ui/Button";
-import Card from "@/components/category/Card";
+import Card from "@/components/ui/Card";
 import { mockPets } from "@/data/mockPets";
 import BannerPet from "@/components/bannerPet/BannerPet";
 
@@ -48,9 +48,9 @@ export default function HomePage() {
       <section className="py-12">
         <div className="mx-auto max-w-7xl px-4">
           <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
-            <h2 className="text-[var(--text-h3-28)] leading-[var(--leading-h3-36)] font-bold text-neutral-100">
+            <h2 className="text-h3-28 leading-h3-36)] font-bold text-neutral-100">
               Small Dog
-              <span className="ml-2 text-[var(--text-body-16)] text-neutral-60">
+              <span className="ml-2 text-body-16 text-neutral-60">
                 ({mockPets.slice(0, 8).length} dogs)
               </span>
             </h2>
@@ -77,9 +77,10 @@ export default function HomePage() {
         description="Having a pet means you have more joy, a new friend, a happy person who will always be with you to have fun. We have 200+ different pets that can meet your needs!"
         image="/images/pet-banners/pet-banner-1.png"
         imageAlt="Young woman with Corgi dog"
-        imagePosition="left"
+        imagePosition="right"
         secondaryBtnText="Explore Now"
         primaryBtnHref="#intro"
+        imgBackground={true}
       />
     </main>
   );
